@@ -9,14 +9,13 @@ player.on('timeupdate', throttle(timeInterval, 1000));
 function timeInterval (data) {
     // localStorage.clear()
     localStorage.setItem(currentTime, JSON.stringify(data.seconds));
-    console.log(data.seconds)
+    // console.log(data.seconds)
 };
 
 const value = localStorage.getItem(currentTime);
-console.log(value);
+// console.log(value);
 // player.setCurrentTime(value);
 player.setCurrentTime(value).then(function (seconds) {
-    console.log('seconds');
     // seconds = the actual time that the player seeked to
 }).catch(function(error) {
     switch (error.name) {
