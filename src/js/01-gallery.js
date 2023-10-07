@@ -8,6 +8,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import SimpleLightbox from 'simplelightbox';
 
 
+
 const galleryImage = document.querySelector('.gallery');
 const imageMarkup = createImageCardsMarkup(galleryItems);
 

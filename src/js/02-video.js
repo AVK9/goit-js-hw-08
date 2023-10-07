@@ -1,4 +1,4 @@
-const throttle = require('lodash.throttle');
+import throttle from 'lodash.throttle';
 import Player from '@vimeo/player';
 
 const iframe = document.querySelector('iframe');
@@ -7,13 +7,10 @@ const currentTime = "videoplayer-current-time";
 
 player.on('timeupdate', throttle(timeInterval, 1000));
 function timeInterval (data) {
-    // localStorage.clear()
-    localStorage.setItem(currentTime, JSON.stringify(data.seconds));
-    // console.log(data.seconds)
+    localStorage.setItem(currentTime, data.seconds);
 };
-
+// localStorage.clear();
 const value = localStorage.getItem(currentTime);
-// console.log(value);
 // player.setCurrentTime(value);
 player.setCurrentTime(value).then(function (seconds) {
     // seconds = the actual time that the player seeked to
