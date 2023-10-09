@@ -35,6 +35,8 @@ function onFormSubmit(e) {
     e.preventDefault();
     e.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
-    dataSet= {};
+    dataSet = {};
+    refs.email = "";
+    refs.message = "";
      }
 }
